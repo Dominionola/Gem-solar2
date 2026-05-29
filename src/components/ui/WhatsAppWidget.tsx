@@ -15,11 +15,15 @@ export function WhatsAppWidget({
 }: WhatsAppWidgetProps) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
+  const [isDismissed, setIsDismissed] = useState(false);
 
   useEffect(() => {
-    // Check if dismissed in this session
-    const isDismissed = sessionStorage.getItem("gem_solar_whatsapp_dismissed");
-    if (isDismissed) return;
+    // Check if dismissed in this session (browser-only)
+    const dismissed = sessionStorage.getItem("gem_solar_whatsapp_dismissed");
+    if (dismissed) {
+      setIsDismissed(true);
+      return;
+    }
 
     // Show tooltip after 4 seconds
     const timer = setTimeout(() => {
@@ -32,6 +36,7 @@ export function WhatsAppWidget({
   const handleDismiss = (e: React.MouseEvent) => {
     e.stopPropagation();
     setShowTooltip(false);
+    setIsDismissed(true);
     sessionStorage.setItem("gem_solar_whatsapp_dismissed", "true");
   };
 
@@ -91,7 +96,7 @@ export function WhatsAppWidget({
         }}
       >
         {/* Pulsing notification dot (only active before tooltip is dismissed) */}
-        {!showTooltip && !sessionStorage.getItem("gem_solar_whatsapp_dismissed") && (
+        {!showTooltip && !isDismissed && (
           <span className="absolute -top-0.5 -right-0.5 w-3.5 h-3.5 bg-terracotta rounded-full border-2 border-white flex items-center justify-center">
             <span className="absolute inset-0 rounded-full bg-terracotta animate-ping opacity-75" />
           </span>
