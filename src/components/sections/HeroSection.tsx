@@ -5,7 +5,7 @@ import { Leaf } from "@phosphor-icons/react";
 import { Navbar } from "@/components/layout/Navbar";
 
 // Premium spring config
-const springConfig = { type: "spring", stiffness: 100, damping: 20 };
+const springConfig = { type: "spring", stiffness: 100, damping: 20 } as const;
 
 const containerVariants = {
   hidden: { opacity: 0 },
