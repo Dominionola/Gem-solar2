@@ -1,5 +1,6 @@
 import { ArrowRight } from "@phosphor-icons/react/dist/ssr";
 import Link from "next/link";
+import Image from "next/image";
 
 export function ServicesSection() {
   return (
@@ -17,9 +18,11 @@ export function ServicesSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <Link href="#" className="group relative h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden cursor-pointer border border-forest/10 shadow-sm block">
-            <img
-              src="/images/resident.jpeg"
+            <Image
+              src="/images/resident.webp"
               alt="Residential Solar"
+              width={800}
+              height={1200}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent"></div>
@@ -37,9 +40,11 @@ export function ServicesSection() {
           </Link>
 
           <Link href="#" className="group relative h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden cursor-pointer border border-forest/10 shadow-sm block">
-            <img
-              src="/images/commercial.jpeg"
+            <Image
+              src="/images/commercial.webp"
               alt="Commercial Solar"
+              width={800}
+              height={1200}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent"></div>

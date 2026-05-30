@@ -2,6 +2,7 @@
 
 import { useRef, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
+import Image from "next/image";
 
 export function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
@@ -148,10 +149,8 @@ export function ProcessSection() {
             <div className="lg:col-span-7 hidden lg:flex items-center justify-center w-full">
               <div className="w-full aspect-[4/3] max-h-[400px] lg:max-h-[480px] rounded-3xl overflow-hidden relative shadow-2xl bg-adobe-deep/30">
                 {visuals.map((vis, idx) => (
-                  <motion.img
+                  <motion.div
                     key={idx}
-                    src={vis.src}
-                    alt={vis.alt}
                     initial={{ opacity: 0, scale: 1.05 }}
                     animate={{
                       opacity: activeStep === idx ? 1 : 0,
@@ -159,8 +158,16 @@ export function ProcessSection() {
                       pointerEvents: activeStep === idx ? "auto" : "none",
                     }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="absolute inset-0 w-full h-full object-cover origin-center"
-                  />
+                    className="absolute inset-0 w-full h-full"
+                  >
+                    <Image
+                      src={vis.src}
+                      alt={vis.alt}
+                      width={800}
+                      height={600}
+                      className="w-full h-full object-cover origin-center"
+                    />
+                  </motion.div>
                 ))}
               </div>
             </div>
@@ -168,10 +175,8 @@ export function ProcessSection() {
             {/* MOBILE FALLBACK MEDIA */}
             <div className="block lg:hidden w-full aspect-[4/3] max-h-[350px] rounded-3xl overflow-hidden relative shadow-xl bg-adobe-deep/30 mt-8">
               {visuals.map((vis, idx) => (
-                <motion.img
+                <motion.div
                   key={idx}
-                  src={vis.src}
-                  alt={vis.alt}
                   initial={{ opacity: 0, scale: 1.05 }}
                   animate={{
                     opacity: activeStep === idx ? 1 : 0,
@@ -179,8 +184,16 @@ export function ProcessSection() {
                     pointerEvents: activeStep === idx ? "auto" : "none",
                   }}
                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 w-full h-full object-cover origin-center"
-                />
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <Image
+                    src={vis.src}
+                    alt={vis.alt}
+                    width={800}
+                    height={600}
+                    className="w-full h-full object-cover origin-center"
+                  />
+                </motion.div>
               ))}
             </div>
 

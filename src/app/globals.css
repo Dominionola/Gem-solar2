@@ -8,8 +8,8 @@
   --color-adobe: #86462a;
   --color-adobe-deep: #6E3822;
 
-  --font-serif: var(--font-serif);
-  --font-sans: var(--font-sans);
+  --font-serif: Cabinet Grotesk, Satoshi, Geist, ui-sans-serif, system-ui, sans-serif;
+  --font-sans: Geist, Satoshi, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 @layer base {

@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Leaf } from "@phosphor-icons/react";
 import { Navbar } from "@/components/layout/Navbar";
+import Image from "next/image";
 
 // Premium spring config
 const springConfig = { type: "spring", stiffness: 100, damping: 20 } as const;
@@ -32,14 +33,21 @@ export function HeroSection() {
     <div className="p-3 md:p-6 pb-0">
       <section className="relative min-h-[90vh] md:min-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-forest flex flex-col justify-between">
           {/* Image & Overlays */}
-          <motion.img
+          <motion.div
             initial={{ scale: 1.15 }}
             animate={{ scale: 1 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
-            src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2670&auto=format&fit=crop"
-            alt="Solar panels in a lush green field"
-            className="absolute inset-0 w-full h-full object-cover origin-center"
-          />
+            className="absolute inset-0 w-full h-full"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2670&auto=format&fit=crop"
+              alt="Solar panels in a lush green field"
+              width={1920}
+              height={1080}
+              priority
+              className="w-full h-full object-cover origin-center"
+            />
+          </motion.div>
           <div className="absolute inset-0 bg-forest/40 mix-blend-multiply"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-forest/95 via-forest/30 to-forest/40"></div>
 

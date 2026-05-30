@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { ArrowRight } from "@phosphor-icons/react";
+import Image from "next/image";
 
 /* ─── Spring ─────────────────────────────────────── */
 const spring = { type: "spring", stiffness: 90, damping: 22 } as const;
@@ -134,9 +135,11 @@ export function ProductsSection() {
 
           {/* Image pane */}
           <div className="md:col-span-7 relative overflow-hidden min-h-[280px] md:min-h-0">
-            <img
-              src="/images/solar_panels.png"
+            <Image
+              src="/images/solar_panels.webp"
               alt="High-efficiency solar panel array"
+              width={1200}
+              height={800}
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
             {/* Left-edge fade to blend with card bg */}
@@ -156,9 +159,11 @@ export function ProductsSection() {
           >
             {/* Image — contained top strip */}
             <div className="relative h-56 overflow-hidden bg-[#E2D9C4] flex-shrink-0">
-              <img
-                src="/images/charging%20box.jpeg"
+              <Image
+                src="/images/charging box.webp"
                 alt="EV Charging Box"
+                width={800}
+                height={600}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#EAE3D2]/60" />
@@ -195,9 +200,11 @@ export function ProductsSection() {
           >
             {/* Image — contained top strip */}
             <div className="relative h-56 overflow-hidden bg-[#E2D9C4] flex-shrink-0">
-              <img
-                src="/images/battry.jpeg"
+              <Image
+                src="/images/battry.webp"
                 alt="Home Battery Storage Unit"
+                width={800}
+                height={600}
                 className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#EAE3D2]/60" />

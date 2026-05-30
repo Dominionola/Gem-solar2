@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useMotionValue, useTransform, animate } from "motion/react";
+import Image from "next/image";
 
 /* ─── Spring Config ─────────────────────────────── */
 const spring = { type: "spring", stiffness: 100, damping: 22 } as const;
@@ -153,9 +154,11 @@ export function ValuePropsSection() {
         >
           <SpotlightCard className="h-full min-h-[480px] cursor-pointer bg-forest/40">
             <div className="relative w-full h-full min-h-[480px] overflow-hidden rounded-3xl">
-              <img
-                src="/images/energy_independence.png"
+              <Image
+                src="/images/energy_independence.webp"
                 alt="Energy Independence — solar architecture at dusk"
+                width={1200}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               {/* Bottom gradient overlay */}
@@ -186,9 +189,11 @@ export function ValuePropsSection() {
           <motion.div variants={item} className="flex-1">
             <SpotlightCard className="h-full min-h-[220px] cursor-pointer bg-forest/40 overflow-hidden">
               <div className="relative w-full h-full min-h-[220px] overflow-hidden rounded-3xl">
-                <img
-                  src="/images/financial_savings.png"
+                <Image
+                  src="/images/financial_savings.webp"
                   alt="Financial Savings — precision energy graphs"
+                  width={600}
+                  height={400}
                   className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/20 to-transparent" />
@@ -239,9 +244,11 @@ export function ValuePropsSection() {
         <motion.div variants={item} className="md:col-span-12">
           <SpotlightCard className="w-full cursor-pointer bg-forest/40 overflow-hidden">
             <div className="relative w-full h-[320px] lg:h-[380px] overflow-hidden rounded-3xl">
-              <img
-                src="/images/download (33)_rotated.jpg"
+              <Image
+                src="/images/download (33)_rotated.webp"
                 alt="Eco-Impact — misty forest landscape"
+                width={1600}
+                height={800}
                 className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
               />
               {/* Left-to-right gradient so copy stays legible */}
