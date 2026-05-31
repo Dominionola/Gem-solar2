@@ -3,12 +3,13 @@
 import { useRef, useState } from "react";
 import { motion, useScroll, useMotionValueEvent } from "motion/react";
 import Image from "next/image";
+import StackingCards from "@/components/ui/stacking-card";
 
 export function ProcessSection() {
   const [activeStep, setActiveStep] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Track the scroll progress of the entire container
+  // Track the scroll progress of the entire container (Desktop only)
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
@@ -88,10 +89,49 @@ export function ProcessSection() {
     },
   ];
 
+  const stackingProjects = [
+    {
+      title: "Make an appointment",
+      description: "Fill in the contact form and we will call you and book a meeting. Registration of interest is free of charge and no order is required.",
+      link: visuals[0].src,
+      color: "#2D3A30", // Forest Green
+      num: "01",
+      textColor: "text-cream",
+      accentColor: "text-cream/60",
+    },
+    {
+      title: "Free home visit",
+      description: "Our engineers will conduct a comprehensive evaluation of your roof, capturing precise measurements for the custom design.",
+      link: visuals[1].src,
+      color: "#6E3822", // Adobe Deep
+      num: "02",
+      textColor: "text-cream",
+      accentColor: "text-cream/60",
+    },
+    {
+      title: "Installation",
+      description: "Expert technicians arrive to seamlessly mount the panels and connect the inverter, prioritizing cleanliness and safety.",
+      link: visuals[2].src,
+      color: "#8FA38E", // Sage Green
+      num: "03",
+      textColor: "text-forest", // Dark forest text on sage green for readability
+      accentColor: "text-forest/60",
+    },
+    {
+      title: "Support",
+      description: "Once inspections are passed, you flick the switch. Enjoy clean, renewable energy and watch your savings grow.",
+      link: visuals[3].src,
+      color: "#A65D43", // Terracotta
+      num: "04",
+      textColor: "text-cream",
+      accentColor: "text-cream/60",
+    },
+  ];
+
   return (
     <section id="process" className="bg-adobe">
-      {/* Scroll Track Container: h-auto on mobile, massive scrollable height on desktop */}
-      <div ref={containerRef} className="relative w-full h-auto lg:h-[300vh]">
+      {/* Desktop Layout (lg and above) */}
+      <div ref={containerRef} className="relative w-full h-[300vh] hidden lg:block">
         
         {/* Sticky viewport frame */}
         <div className="lg:sticky lg:top-0 lg:h-[100vh] w-full flex items-center justify-center py-12 lg:py-16 px-6 lg:px-12">
@@ -171,34 +211,19 @@ export function ProcessSection() {
                 ))}
               </div>
             </div>
-            
-            {/* MOBILE FALLBACK MEDIA */}
-            <div className="block lg:hidden w-full aspect-[4/3] max-h-[350px] rounded-3xl overflow-hidden relative shadow-xl bg-adobe-deep/30 mt-8">
-              {visuals.map((vis, idx) => (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{
-                    opacity: activeStep === idx ? 1 : 0,
-                    scale: activeStep === idx ? 1 : 1.05,
-                    pointerEvents: activeStep === idx ? "auto" : "none",
-                  }}
-                  transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                  className="absolute inset-0 w-full h-full"
-                >
-                  <Image
-                    src={vis.src}
-                    alt={vis.alt}
-                    width={800}
-                    height={600}
-                    className="w-full h-full object-cover origin-center"
-                  />
-                </motion.div>
-              ))}
-            </div>
 
           </div>
         </div>
+      </div>
+
+      {/* Mobile Layout (< lg) */}
+      <div className="block lg:hidden py-16 px-4">
+        <div className="max-w-md mx-auto mb-10 text-center">
+          <h2 className="font-sans text-3xl font-medium text-cream leading-tight tracking-tight">
+            Four simple steps to get solar cells from Gem Solar.
+          </h2>
+        </div>
+        <StackingCards projects={stackingProjects} />
       </div>
     </section>
   );
