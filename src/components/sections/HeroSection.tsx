@@ -41,7 +41,7 @@ export function HeroSection() {
           >
             <Image
               src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2670&auto=format&fit=crop"
-              alt="Solar panels in a lush green field"
+              alt="Solar panel installation in Nigeria — Gem Solar residential rooftop system"
               width={1920}
               height={1080}
               priority
@@ -64,13 +64,26 @@ export function HeroSection() {
             >
               {/* Headline & CTA */}
               <div className="lg:col-span-7 2xl:col-span-8">
-                <span className="sr-only">
-                  Solar Panel Installation in Ibadan
-                </span>
-                <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-cream font-sans font-bold mb-8 max-w-3xl overflow-hidden flex flex-col gap-2">
+                {/* Visible geo badge — SEO-indexable location signal */}
+                <motion.div variants={itemVariants} className="mb-6">
+                  <span className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.18em] font-semibold text-sage border border-sage/30 px-3.5 py-1.5 rounded-full backdrop-blur-sm bg-forest/20">
+                    <span className="w-1.5 h-1.5 rounded-full bg-terracotta animate-pulse" />
+                    Solar Installation — Lagos · Ibadan · Abuja · Nigeria
+                  </span>
+                </motion.div>
+
+                <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] tracking-tight text-cream font-sans font-bold mb-4 max-w-3xl overflow-hidden flex flex-col gap-2">
                   <motion.div variants={itemVariants}>Clean future</motion.div>
                   <motion.div variants={itemVariants}>ready for you.</motion.div>
                 </h1>
+
+                {/* Geo-keyword subtitle — indexable by Google */}
+                <motion.p
+                  variants={itemVariants}
+                  className="text-cream/60 font-sans text-base md:text-lg mb-8 max-w-md leading-relaxed"
+                >
+                  Nigeria&apos;s trusted solar panel installation company. We design, supply, and install residential &amp; commercial solar systems across Nigeria.
+                </motion.p>
                 
                 <motion.div variants={itemVariants}>
                   <motion.button 

@@ -104,21 +104,48 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-cream/10 flex flex-col md:flex-row justify-between items-center gap-4 font-sans text-sm text-cream/50 relative z-10">
-        <div className="font-sans text-xl font-bold text-cream">
-          Gem Solar
+      {/* NAP + Service Area + Legal footer */}
+      <div className="max-w-7xl mx-auto mt-24 pt-8 border-t border-cream/10 relative z-10">
+
+        {/* NAP Row */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8 font-sans text-sm text-cream/60">
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-cream/30 mb-2 font-semibold">Address</p>
+            <address className="not-italic leading-relaxed">
+              Gem Solar Nigeria<br />
+              Ibadan, Oyo State, Nigeria
+            </address>
+          </div>
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-cream/30 mb-2 font-semibold">Contact</p>
+            <p>
+              <a href="tel:+2348051307748" className="hover:text-cream transition-colors">+234 805 130 7748</a><br />
+              <a href="mailto:gemsolar2020@gmail.com" className="hover:text-cream transition-colors">gemsolar2020@gmail.com</a>
+            </p>
+          </div>
+          <div>
+            <p className="text-[10px] uppercase tracking-[0.18em] text-cream/30 mb-2 font-semibold">Service Areas</p>
+            <p className="leading-relaxed">Lagos · Ibadan · Abuja<br />Port Harcourt · Ogun · Osun</p>
+          </div>
         </div>
-        <p>
-          &copy; {new Date().getFullYear()} Gem Solar Inc. All rights
-          reserved.
-        </p>
-        <div className="flex gap-6">
-          <Link href="#" className="hover:text-cream transition-colors">
-            Privacy Policy
-          </Link>
-          <Link href="#" className="hover:text-cream transition-colors">
-            Terms of Service
-          </Link>
+
+        {/* Legal Row */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4 pt-6 border-t border-cream/10 text-sm text-cream/50">
+          <div className="font-sans text-xl font-bold text-cream">
+            Gem Solar
+          </div>
+          <p>
+            &copy; {new Date().getFullYear()} Gem Solar Nigeria. All rights
+            reserved.
+          </p>
+          <div className="flex gap-6">
+            <Link href="/privacy" className="hover:text-cream transition-colors">
+              Privacy Policy
+            </Link>
+            <Link href="/terms" className="hover:text-cream transition-colors">
+              Terms of Service
+            </Link>
+          </div>
         </div>
       </div>
     </footer>

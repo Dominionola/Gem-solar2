@@ -20,7 +20,7 @@ export function ServicesSection() {
           <Link href="#" className="group relative h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden cursor-pointer border border-forest/10 shadow-sm block">
             <Image
               src="/images/resident.webp"
-              alt="Residential Solar"
+              alt="Residential solar panel installation on a home rooftop in Nigeria"
               width={800}
               height={1200}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
@@ -42,7 +42,7 @@ export function ServicesSection() {
           <Link href="#" className="group relative h-[400px] lg:h-[600px] rounded-[32px] overflow-hidden cursor-pointer border border-forest/10 shadow-sm block">
             <Image
               src="/images/commercial.webp"
-              alt="Commercial Solar"
+              alt="Commercial solar array installation for a business in Lagos, Nigeria"
               width={800}
               height={1200}
               className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
