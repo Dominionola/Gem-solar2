@@ -23,7 +23,7 @@ export function ServicesSection() {
               alt="Residential solar panel installation on a home rooftop in Nigeria"
               width={800}
               height={1200}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full p-8 md:p-10">
@@ -45,7 +45,7 @@ export function ServicesSection() {
               alt="Commercial solar array installation for a business in Lagos, Nigeria"
               width={800}
               height={1200}
-              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="absolute inset-0 w-full h-full object-cover transition-transform duration-700"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/40 to-transparent"></div>
             <div className="absolute bottom-0 left-0 w-full p-8 md:p-10">

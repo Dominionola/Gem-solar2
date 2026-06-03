@@ -140,7 +140,7 @@ export function ProductsSection() {
               alt="High-efficiency solar panel array"
               width={1200}
               height={800}
-              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out"
             />
             {/* Left-edge fade to blend with card bg */}
             <div className="absolute inset-0 bg-gradient-to-r from-[#EAE3D2] via-[#EAE3D2]/20 to-transparent w-1/3" />
@@ -164,7 +164,7 @@ export function ProductsSection() {
                 alt="EV Charging Box"
                 width={800}
                 height={600}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#EAE3D2]/60" />
             </div>
@@ -205,7 +205,7 @@ export function ProductsSection() {
                 alt="Home Battery Storage Unit"
                 width={800}
                 height={600}
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 ease-out"
               />
               <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#EAE3D2]/60" />
             </div>

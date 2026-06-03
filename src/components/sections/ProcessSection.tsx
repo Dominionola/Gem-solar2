@@ -72,19 +72,19 @@ export function ProcessSection() {
 
   const visuals = [
     {
-      src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2670&auto=format&fit=crop",
+      src: "/images/appointment.webp",
       alt: "Consultation",
     },
     {
-      src: "https://images.unsplash.com/photo-1504307651254-35680f356f78?q=80&w=2670&auto=format&fit=crop",
+      src: "/images/home-visit.webp",
       alt: "Home Visit",
     },
     {
-      src: "https://images.unsplash.com/photo-1508514177221-188b1c7d1f17?q=80&w=2670&auto=format&fit=crop",
+      src: "/images/installation.webp",
       alt: "Installation",
     },
     {
-      src: "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?q=80&w=2670&auto=format&fit=crop",
+      src: "/images/support.webp",
       alt: "Support",
     },
   ];
@@ -191,10 +191,9 @@ export function ProcessSection() {
                 {visuals.map((vis, idx) => (
                   <motion.div
                     key={idx}
-                    initial={{ opacity: 0, scale: 1.05 }}
+                    initial={{ opacity: 0 }}
                     animate={{
                       opacity: activeStep === idx ? 1 : 0,
-                      scale: activeStep === idx ? 1 : 1.05,
                       pointerEvents: activeStep === idx ? "auto" : "none",
                     }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}

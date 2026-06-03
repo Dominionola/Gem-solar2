@@ -1,41 +1,13 @@
 "use client";
 
-import { motion, useInView } from "motion/react";
-import { useRef, useEffect } from "react";
+import { motion } from "motion/react";
+import { useRef } from "react";
 import { Lightning, CheckCircle, ArrowRight } from "@phosphor-icons/react";
+import BackgroundVideo from "next-video/background-video";
+import aerialVideo from "@videos/Main Arial veiw.mp4";
 
 export function TechnologySection() {
   const sectionRef = useRef<HTMLDivElement>(null);
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const isInView = useInView(sectionRef, { amount: 0.3 });
-
-  // Freeze the video 0.1s before the end — plays to that point then holds the last frame
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const handleTimeUpdate = () => {
-      if (!isNaN(video.duration) && video.currentTime >= video.duration - 0.2) {
-        video.pause();
-        // Snap to the freeze point so it never overshoots
-        video.currentTime = video.duration - 0.2;
-      }
-    };
-
-    video.addEventListener("timeupdate", handleTimeUpdate);
-
-    if (isInView) {
-      // Only (re)start if not already frozen at the end
-      const frozen = !isNaN(video.duration) && video.currentTime >= video.duration - 0.2;
-      if (!frozen) video.play().catch(() => { });
-    } else {
-      video.pause();
-    }
-
-    return () => {
-      video.removeEventListener("timeupdate", handleTimeUpdate);
-    };
-  }, [isInView]);
 
   return (
     <section ref={sectionRef} className="py-24 px-6 lg:px-12 max-w-7xl mx-auto border-t border-adobe/20">
@@ -47,17 +19,11 @@ export function TechnologySection() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="relative h-[500px] lg:h-[650px] rounded-[40px] overflow-hidden shadow-xl"
         >
-          <video
-            ref={videoRef}
-            src="/videos/Main Arial veiw.mp4"
-            muted
-            playsInline
-
-            disablePictureInPicture
-            controlsList="nodownload nofullscreen noremoteplayback"
-            className="absolute inset-0 w-full h-full object-cover"
+          <BackgroundVideo
+            src={aerialVideo}
+            className="absolute inset-0 w-full h-full [&>video]:object-cover"
           />
-          <div className="absolute inset-0 bg-sage/10 mix-blend-multiply"></div>
+          <div className="absolute inset-0 bg-sage/10 mix-blend-multiply pointer-events-none"></div>
         </motion.div>
 
         <motion.div
@@ -122,3 +88,4 @@ export function TechnologySection() {
     </section>
   );
 }
+

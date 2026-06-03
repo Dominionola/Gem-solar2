@@ -159,7 +159,7 @@ export function ValuePropsSection() {
                 alt="Energy Independence — solar architecture at dusk"
                 width={1200}
                 height={800}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out"
               />
               {/* Bottom gradient overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-forest/90 via-forest/20 to-transparent" />
@@ -190,11 +190,11 @@ export function ValuePropsSection() {
             <SpotlightCard className="h-full min-h-[220px] cursor-pointer bg-forest/40 overflow-hidden">
               <div className="relative w-full h-full min-h-[220px] overflow-hidden rounded-3xl">
                 <Image
-                  src="/images/financial_savings.webp"
-                  alt="Financial Savings — precision energy graphs"
+                  src="/images/naira-notes.webp"
+                  alt="Financial Savings — Nigerian Naira notes"
                   width={600}
                   height={400}
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-out"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest/85 via-forest/20 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -249,7 +249,7 @@ export function ValuePropsSection() {
                 alt="Eco-Impact — misty forest landscape"
                 width={1600}
                 height={800}
-                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+                className="w-full h-full object-cover transition-transform duration-700 ease-out"
               />
               {/* Left-to-right gradient so copy stays legible */}
               <div className="absolute inset-0 bg-gradient-to-r from-forest/90 via-forest/50 to-transparent" />

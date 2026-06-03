@@ -34,13 +34,13 @@ export function HeroSection() {
       <section className="relative min-h-[90vh] md:min-h-[85vh] rounded-[32px] md:rounded-[48px] overflow-hidden bg-forest flex flex-col justify-between">
           {/* Image & Overlays */}
           <motion.div
-            initial={{ scale: 1.15 }}
-            animate={{ scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 2, ease: [0.16, 1, 0.3, 1] }}
             className="absolute inset-0 w-full h-full"
           >
             <Image
-              src="https://images.unsplash.com/photo-1592833159155-c62df1b65634?q=80&w=2670&auto=format&fit=crop"
+              src="/images/hero-solar.webp"
               alt="Solar panel installation in Nigeria — Gem Solar residential rooftop system"
               width={1920}
               height={1080}
